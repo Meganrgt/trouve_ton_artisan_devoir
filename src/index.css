@@ -28,3 +28,19 @@ code {
   border-radius: 20px;
   border: solid 1px #0074C7;
  }
+
+ .btn {
+  border-radius: 20px;
+  background-color: #0074C7;
+  color: white;
+ }
+
+ .btn:hover {
+  background-color: #00497C;
+  color: white;
+ }
+
+ #HomeHeader {
+  background-color: #F1F8FC;
+  padding: 3rem;
+ }
