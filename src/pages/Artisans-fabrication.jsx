@@ -1,7 +1,16 @@
+import Card from "../components/card";
+import artisan from "../artisan.jpg";
+
 const Fabrication = () => {
     return (
-        <div>
-            <h1>Fabrication</h1>
+        <div className="body">
+            <div className="lineh1"></div>
+            <h1>Vos artisans dans la fabrication</h1>
+            <div className="row">
+                <Card className="col-md-4" imageLink={artisan} nomArtisan="Nom artisan" specialite="Boulanger" localisation="Lyon" />
+                <Card className="col-md-4" imageLink={artisan} nomArtisan="Nom artisan" specialite="Boulanger" localisation="Lyon" />
+                <Card className="col-md-4" imageLink={artisan} nomArtisan="Nom artisan" specialite="Boulanger" localisation="Lyon" />
+            </div>
         </div>
     )
 }

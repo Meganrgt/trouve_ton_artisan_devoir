@@ -1,7 +1,9 @@
 const Mentions = () => {
     return (
-        <div>
+        <div className="body">
+            <div className="lineh1"></div>
             <h1>Mentions légales</h1>
+            <p>Contenu à venir</p>
         </div>
     )
 }

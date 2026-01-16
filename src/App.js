@@ -10,6 +10,8 @@ import DonneesPersonnelles from "./pages/Donnees-personnelles";
 import Accessibilite from "./pages/Accessibilite";
 import Cookies from "./pages/Politique-cookies";
 import Logo from "./Logo.png";
+import Artisan from "./pages/Artisan"
+import Page404 from "./pages/404"
 
 
 class App extends React.Component {
@@ -47,6 +49,8 @@ class App extends React.Component {
         <Route path="/donnees-personnelles" element={<DonneesPersonnelles/>}></Route>
         <Route path="/accessibilite" element={<Accessibilite/>}></Route>
         <Route path="/politiques-cookies" element={<Cookies/>}></Route>
+        <Route path="/artisan" element={<Artisan/>}></Route>
+        <Route path="/404" element={<Page404/>}></Route>
       </Routes>
       <footer className="row">
         <div className="col-md-4 ps-5">

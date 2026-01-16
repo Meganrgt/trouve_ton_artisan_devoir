@@ -6,7 +6,7 @@ import ImageHeader from "../assets/undraw_location-search_nesh.svg";
 const Home = () => {
     return (
         <div>
-            <div id="HomeHeader" className="row">
+            <header id="HomeHeader" className="row">
                 <div className="col-md-4">
                     <img src={ImageHeader} alt="Logo" width="300"className="d-inline-block align-text-top"/>
                 </div>    
@@ -19,8 +19,9 @@ const Home = () => {
                         <li>Une réponse sera apportée sous 48h</li>
                     </ol>
                 </div>     
-            </div>
-            <div>
+            </header>
+            <div className="body">
+                <div className="lineh2-blue"></div>
                 <h2>Les artisans du mois</h2>
                 <div className="row">
                 <Card className="col-md-4" imageLink={artisan} nomArtisan="Nom artisan" specialite="Boulanger" localisation="Lyon" />
