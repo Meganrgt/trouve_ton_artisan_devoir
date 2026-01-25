@@ -1,8 +1,8 @@
 const Card = (props) => {
     return (
-        <div className="col-sm-4">
+        <div className="col-lg-3 col-md-4">
             <div className="card">
-                <img src={props.imageLink} class="card-img-top" alt={props.nomArtisan} />
+                <img src={props.imageLink} className="card-img-top" alt={props.nomArtisan} />
                 <div class="card-body">
                     <h5 className="card-title">{props.nomArtisan}</h5>
                     <p className="card-text">

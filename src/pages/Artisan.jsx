@@ -32,7 +32,7 @@ const Artisan = () => {
                     <div className="lineh2-green"></div>
                     <h2>Contactez l'artisan</h2>
                     <div className="row">
-                        <div className="form col-md-8">
+                        <div className="form col-lg-8 col-md-12">
                             <div class="form-floating mb-3 col-6">
                                 <input type="text" class="form-control" id="floatingName" placeholder="John Doe" required/>
                                 <label for="floatingName">Nom</label>
@@ -50,7 +50,7 @@ const Artisan = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <img src={ImageEmail} class="card-img-top" alt="artisan"/>
+                            <img src={ImageEmail} className="card-img-top img-nomobilecontact" alt="artisan"/>
                         </div>
                     </div>
                 </div> 

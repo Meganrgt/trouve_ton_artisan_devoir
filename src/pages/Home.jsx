@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <header id="HomeHeader" className="row">
                 <div className="col-md-4">
-                    <img src={ImageHeader} alt="Logo" width="300"className="d-inline-block align-text-top"/>
+                    <img src={ImageHeader} alt="Logo" width="300"className="img-nomobile"/>
                 </div>    
                 <div className="col-md-8">
                     <h1>Comment trouver mon artisan ?</h1>
