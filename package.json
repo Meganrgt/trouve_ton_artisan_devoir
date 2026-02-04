@@ -1,20 +1,28 @@
 {
   "name": "trouve_ton_artisan_devoir",
   "version": "0.1.0",
+  "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
     "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.16.2",
+    "nodemon": "^3.1.11",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-router-dom": "^7.12.0",
     "react-scripts": "5.0.1",
+    "sequelize": "^6.37.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-with-api": "concurrently \"react-scripts start\" \"PORT=5000 nodemon ./api/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
