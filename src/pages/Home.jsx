@@ -1,9 +1,22 @@
 import Card from "../components/card";
-import artisan from "../artisan.jpg";
+import photoArtisan from "../artisan.jpg";
 import ImageHeader from "../assets/undraw_location-search_nesh.svg";
+import { useQuery } from "react-query";
+
+const getArtisan = async () =>
+    fetch('http://localhost:5000/api/artisans/top_mois/ok')
+    .then((res) => res.json())
 
 
 const Home = () => {
+
+     const {data, isLoading} = useQuery({
+            queryFn: getArtisan,
+            queryKey: ['artisans'],
+        });
+    if(isLoading) {
+        return <div>Loading...</div>
+    }
     return (
         <div>
             <header id="HomeHeader" className="row">
@@ -24,9 +37,11 @@ const Home = () => {
                 <div className="lineh2-blue"></div>
                 <h2>Les artisans du mois</h2>
                 <div className="row">
-                <Card className="col-md-4" imageLink={artisan} nomArtisan="Nom artisan" specialite="Boulanger" localisation="Lyon" />
-                <Card className="col-md-4" imageLink={artisan} nomArtisan="Nom artisan" specialite="Boulanger" localisation="Lyon" />
-                <Card className="col-md-4" imageLink={artisan} nomArtisan="Nom artisan" specialite="Boulanger" localisation="Lyon" />
+                {
+                data?.map(artisan => (
+                    <Card className="col-md-4" imageLink={photoArtisan} nomArtisan={artisan.nom_artisan} specialite={artisan.specialite['nom_specialite']} localisation={artisan.Ville['nom_ville']} idArtisan={artisan.id_artisan} />
+                ))
+            }
                 </div>
             </div>
             

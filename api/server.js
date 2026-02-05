@@ -13,6 +13,9 @@ app.use('/api', apiRoutes);
 
 //Database Connection
 const mysql = require('mysql2/promise');
+const { applyExtraSetUp } = require('./extra-setup');
+
+applyExtraSetUp(sequelize);
 
 
 app.listen(port, async () => {

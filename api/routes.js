@@ -22,7 +22,21 @@ router.get('/specialites', async (req, res)=> {
 });
 
 router.get('/artisans', async (req, res)=> {
-    let artisans = await Artisan.findAll();
+    let artisans = await Artisan.findAll({
+        include: [
+            {
+                model: Specialite,
+                attributes: ['nom_specialite'],
+                as: 'specialite',
+                include: [Categorie],
+            },
+            {
+                model: Ville,
+                attributes: ['nom_ville'],
+            },
+
+        ], 
+    });
     res.status(200).json(artisans);
 
 });
@@ -56,8 +70,64 @@ router.get('/specialites/:id', async (req, res)=> {
 
 router.get('/artisans/:id', async (req, res)=> {
     let artisan = await Artisan.findOne({
+        include: [
+            {
+                model: Specialite,
+                attributes: ['nom_specialite'],
+                as: 'specialite',
+            },
+            {
+                model: Ville,
+                attributes: ['nom_ville'],
+            },
+
+        ],
         where: {
             id_artisan:req.params.id
+        }
+    });
+    res.status(200).json(artisan);
+});
+
+router.get('/artisans/categories/:id', async (req, res)=> {
+    let artisan = await Artisan.findAll({
+        include: [
+            {
+                model: Specialite,
+                attributes: ['nom_specialite'],
+                as: 'specialite',
+                include: [Categorie],
+                where: {
+                    id_categorie:req.params.id
+                }
+            },
+            {
+                model: Ville,
+                attributes: ['nom_ville'],
+            },
+
+        ],
+    });
+    res.status(200).json(artisan);
+});
+
+router.get('/artisans/top_mois/ok', async (req, res)=> {
+    let artisan = await Artisan.findAll({
+        include: [
+            {
+                model: Specialite,
+                attributes: ['nom_specialite'],
+                as: 'specialite',
+            },
+            {
+                model: Ville,
+                attributes: ['nom_ville'],
+            },
+
+        ],
+        
+        where: {
+            top_mois: true
         }
     });
     res.status(200).json(artisan);

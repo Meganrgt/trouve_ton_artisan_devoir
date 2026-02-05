@@ -12,11 +12,14 @@ import Cookies from "./pages/Politique-cookies";
 import Logo from "./Logo.png";
 import Artisan from "./pages/Artisan"
 import Page404 from "./pages/404"
+import {QueryClient, QueryClientProvider} from "react-query";
 
+const queryClient = new QueryClient();
 
 class App extends React.Component {
   render() {
     return(
+      <QueryClientProvider client={queryClient}>
       <div className="App">
         <nav className="navbar navbar-expand-lg shadow">
           <div className="container-fluid">
@@ -49,8 +52,8 @@ class App extends React.Component {
         <Route path="/donnees-personnelles" element={<DonneesPersonnelles/>}></Route>
         <Route path="/accessibilite" element={<Accessibilite/>}></Route>
         <Route path="/politiques-cookies" element={<Cookies/>}></Route>
-        <Route path="/artisan" element={<Artisan/>}></Route>
-        <Route path="/404" element={<Page404/>}></Route>
+        <Route path="/artisan/:id" element={<Artisan/>}></Route>
+        <Route path="*" element={<Page404/>}></Route>
       </Routes>
       <footer className="row">
         <div className="col-md-4 ps-5">
@@ -60,7 +63,7 @@ class App extends React.Component {
             <p>CS 20033</p>
             <p>69269 LYON CEDEX 02</p>
             <p>France</p>
-            <Link ClassName="nav-link text-white" to="tel:0426734000">+33 (0)4 26 73 40 00</Link>
+            <Link className="nav-link text-white" to="tel:0426734000">+33 (0)4 26 73 40 00</Link>
           </address>
         </div>
         <ul className="nav col-md-8 align-self-center justify-content-evenly">
@@ -79,6 +82,7 @@ class App extends React.Component {
         </ul>
       </footer>
     </div>
+    </QueryClientProvider>
     )
   }
 }

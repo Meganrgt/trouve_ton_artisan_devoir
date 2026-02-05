@@ -1,6 +1,8 @@
 const {sequelize} = require ('../db');
 const {DataTypes} = require ('sequelize');
 
+
+
 const Specialite = sequelize.define('Specialite', {
     id_specialite: {
         type: DataTypes.INTEGER, 
@@ -23,5 +25,6 @@ const Specialite = sequelize.define('Specialite', {
 });
 
 Specialite.removeAttribute('id');
+
 
 module.exports = Specialite;
