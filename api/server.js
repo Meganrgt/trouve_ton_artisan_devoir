@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const port = 5000;
 const apiRoutes = require ('./routes');
-const {sequelize, connectToDb} = require ('./db');
+const {sequelize, connectToDb} = require ('./db/db');
 
 
 //Middleware
